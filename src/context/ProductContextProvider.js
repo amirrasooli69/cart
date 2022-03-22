@@ -11,13 +11,14 @@ const ProductContextProvider = ({children}) => {
     useEffect(() => {
         const fetchAPI = async () => {
             setProducts(await getProducts());
+
         }
         
         fetchAPI();
 
     },[]);
 
-
+    
     return (
         <ProductsContext.Provider value={products}>
             {children}

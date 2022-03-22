@@ -1,12 +1,18 @@
 import React ,{ useContext } from 'react';
+//Components
+import Product from './shared/Product';
 
 //context
 import { ProductsContext } from '../context/ProductContextProvider';
-import Product from './shared/Product';
+
 const Store = () => {
 
     const products = useContext(ProductsContext);
+    console.log(products)
+
+    
     return (
+        
         <div style={{display:'flex' , flexWrap:'wrap' , justifyContent:'space-between'}}>
             {
                 products.map(product => <Product 
@@ -14,6 +20,7 @@ const Store = () => {
                                             productData={product}
                                         />)
             }
+
         </div>
     );
 };
