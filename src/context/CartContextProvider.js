@@ -9,6 +9,7 @@ const initialState = {
 }
 
 const cartReducer = (state, action) => {
+    // console.log(state);
     switch(action.type) {
         case "ADD_ITEM":
             if (!state.selectedItems.find(item => item.id === action.payload.id)) {
@@ -23,7 +24,7 @@ const cartReducer = (state, action) => {
             }
 
         case "REMOVE_ITEM":
-            const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.di);
+            const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.id);
             return {
                 ...state,
                 selectedItems: [...newSelectedItems]
@@ -37,12 +38,11 @@ const cartReducer = (state, action) => {
             }
 
         case "DECREASE":
-            const indexD = state.selecteditems.findIndex(item => item.id === action.payload.id);
-            state.selecteditems[indexD].quantity--;
+            const indexD = state.selectedItems.findIndex(item => item.id === action.payload.id);
+            state.selectedItems[indexD].quantity--;
             return {
                 ...state,
             }
-
         case "CHECKOUT":
             return {
                 selectedItems: [],
