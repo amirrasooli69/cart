@@ -8,7 +8,7 @@ import { shorten, isInCart, quantityCount} from '../../helper/functions';
 import { CartContext } from '../../context/CartContextProvider';
 
 //Icon
-import trashIcon from 'D:/Project/React/cart/src/assets/icons/trash.svg'
+import trashIcon from '../../assets/icons/trash.svg'
 
 const Product = ({productData}) => {
 
