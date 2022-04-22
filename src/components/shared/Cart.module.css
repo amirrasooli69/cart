@@ -59,9 +59,10 @@
     width: 20px;
 }
 
-@media(max-width: 470) {
+@media(max-width: 470px) {
     .container {
         flex-direction: column;
+
     }
 
     .productImage {

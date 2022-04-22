@@ -14,7 +14,7 @@ const Store = () => {
     
     return (
         // style={styles.container}
-        <div > 
+        <div className={styles.container}> 
             {
                 products.map(product => <Product 
                                             key={product.id} 
