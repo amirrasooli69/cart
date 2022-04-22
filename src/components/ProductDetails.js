@@ -1,15 +1,28 @@
-import React , { useContext }from 'react';
+import axios from 'axios';
+import React , { useContext, useEffect, useState}from 'react';
 import { Link } from 'react-router-dom';
+import { getProduct } from '../services/api';
+
 //Context
-import { ProductsContext } from '../context/ProductContextProvider';
+// import { ProductsContext } from '../context/ProductContextProvider';
 
 //Styles
 import styles from './ProductDetails.module.css';
-const ProductDetails = (props) => {
 
-    const data = useContext(ProductsContext);
+const ProductDetails = (props) => {
     const id = props.match.params.id;
-    const product = data[id -1];
+
+    const [product, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchAPI = async () => {
+            setProducts(await getProduct(id));
+        }
+
+        fetchAPI();
+    }, []);
+
+    // const data = useContext(ProductsContext);
     const {image , title , description , category , price} = product;
     return (
         <div className={styles.container}>
