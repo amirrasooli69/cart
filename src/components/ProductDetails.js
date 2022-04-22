@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React , { useContext, useEffect, useState}from 'react';
 import { Link } from 'react-router-dom';
 import { getProduct } from '../services/api';
@@ -23,6 +22,7 @@ const ProductDetails = (props) => {
     }, []);
 
     // const data = useContext(ProductsContext);
+    // const produc = data[id -1];
     const {image , title , description , category , price} = product;
     return (
         <div className={styles.container}>
